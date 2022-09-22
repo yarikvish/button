@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8" />
+      <title>Button Kill</title>
+      <link rel="stylesheet" type="text/css" href="style\css.css">
+   </head>
+
+   <body>
+<script src="jQuery.min.js"></script>
+
+ <div>
+  
+<button id="button-1" class="button">
+  <i class="fa fa-credit-card"></i>
+  <span>Кнопка</span>
+</button>
+  
+
+  
+  <ul></ul>
+  
+</div>
+<style type="text/css">
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  font-family: Roboto;
+}
+
+.button {
+  position: relative;
+  border: 1px solid rgba(0,100,15);
+  outline: none;
+  display: inline-block;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 12px 16px;
+  color: #1EFF38;
+  background: transparent;
+  text-shadow: 0 1px 1px rgba(0,100,15);
+  margin: 12px;
+}
+
+.button span,
+.button i {
+  z-index: 2;
+}
+
+.button:active {
+  border-color: rgba(0,100,15);
+}
+
+.button::before,
+.button::after {
+  content: "";
+  position: absolute;
+  transition: all 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.button::before {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.button:active::before {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* --- Кнопка 1 --- */
+
+#button-1 i {
+  color: #e8d427;
+}
+
+#button-1::before,
+#button-1:active::before {
+  opacity: 0;
+  transform: scale(1, 0.1);
+}
+
+#button-1:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+/* --- Кнопка 2 --- */
+
+#button-2 i {
+  color: #9b59b6;
+}
+
+#button-2::before {
+  opacity: 0;
+  transform: scale(0.1, 0.1);
+}
+
+#button-2:hover::before {
+  opacity: 1;
+  transform: scale(1, 1);
+}
+
+/* --- Кнопка 3 --- */
+
+#button-3 i {
+  color: #e67e22;
+}
+
+#button-3::before {
+  left: 0;
+  top: 0;
+  height: 490%;
+  width: 140%;
+  -webkit-transform: translateX(-101%) translateY(-25%) rotate(45deg);
+  transform: translateX(-101%) translateY(-25%) rotate(45deg);
+}
+
+#button-3:hover::before {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+.button i {
+  margin-right: 4px;
+}
+
+div {
+  margin: 24px;
+  text-align: center;
+}
+
+ul li {
+  list-style: none;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+  font-weight: lighter;
+  font-family: Roboto;
+  margin-top: 6px;
+}</style>
+<script type="text/javascript">jQuery(document).ready(function($){
+  
+  var count = '0';
+  var texts = [
+      'Хорошая попытка!',
+      'Так хватит уже кликать на меня',
+      'Мне больно вообщето!',
+      'Может прекратишь?',
+      'Ну пожалуйста',
+      'Любишь нажимать на кнопки?',
+      'ПЕРЕСТАНЬ ТОГДА НА НИХ НАЖИМАТЬ',
+      'Нажимать на незнакомые кнопки - опасно!',
+      'Ну блина...',
+      'Хватит!',
+      'Хватит!',
+      'Ну ладно',
+      'так вы там не любите математику так что...',
+      '1',
+      '2',
+      '3',
+      '4',
+      '5',
+      '6',
+      '7',
+      '8',
+      '9',
+      '10',
+      '11',
+      '12',
+      '13',
+      '14',
+      '15',
+      '16',
+      '17',
+      '18',
+      '19',
+      '20',
+      'Так мне самому надоело...',
+      'ТЫ ЕЩЁ ЗДЕСЬ?',
+      'КЫШ КЫШ КЫШ...',
+      'Ай больно перестань КЛИКАТЬ НА МЕНЯ!!!!!!!!!!!!',
+      'Слушай, может договоримся?',
+      'Ты выйдешь с сайта и я тебя тогда не буду обижать',
+      'Если не выйдешь то сделаю кусь!',
+      '*Кусь...*',
+      'Тебе не больно?',
+      'ВСМ?!',
+      'Блин, извини за кусь пожалуйста!',
+      'Да?...',
+      'Спасибо, мне так стыдно за кусь',
+      '*вы сделали кнопке кусь*',
+      'Ай да за что?',
+      '*Это были последние слова Кнопки...💔*'
+
+
+
+
+    ];
+  
+  $('.button').on('click', function(e){
+    
+    var text = '';
+    if(count < texts.length){
+      text = texts[count];
+    }
+    
+    else {
+      text = 'Продолжение следует!'
+    }
+    
+    $('ul').prepend('<li>' + text + '</li>');
+   count++;
+      
+    
+    
+    
+  });
+  
+});</script>
+
+
+
+<div id="scroll-top">
+  <button><span data-hover="Наверх">^<i class="fa fa-arrow-up"></i></span></button>
+</div>
+
+
+<style type="text/css">
+   @import url(https://fonts.googleapis.com/css?family=Roboto);
+
+body {
+  background: #efefef;
+  font-family: Roboto;
+}
+
+.content {
+  height: 400px;
+  line-height: 1.5;
+  width: 90%;
+  margin: 24px auto;
+  color: rgba(0, 0, 0, 0.8);
+}
+
+#scroll-top {
+  position: fixed;
+  bottom: 48px;
+  right: 48px;
+}
+
+#scroll-top button {
+  position: relative;
+  overflow: hidden;
+  height: 48px;
+  width: 48px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 16px;
+  background: #21c984;
+  transition: width 0.5s;
+  border-radius: 100px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+#scroll-top button span {
+  display: inline-block;
+  transition: opacity 0.3s ease 0s, transform 0.5s ease 0s;
+  line-height: 48px;
+  font-size: 20px;
+  width: 100%;
+}
+
+#scroll-top button span::before {
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  top: 200%;
+  opacity: 0;
+  content: attr(data-hover);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  color: #fff;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+#scroll-top:hover button {
+  width: 120px;
+  background: #9b59b6;
+}
+
+#scroll-top:hover button span {
+  -webkit-transform: translateY(-200%);
+  -moz-transform: translateY(-200%);
+  transform: translateY(-200%);
+}
+
+#scroll-top:hover button span:before {
+  opacity: 1;
+}
+
+#scroll-top button:active {
+  background: #21c984;
+}
+</style>
+
+<script type="text/javascript">
+   jQuery(document).ready(function($) {
+  $('html, body').scrollTop($(document).height());
+  
+  $("#scroll-top > button").on("click", function(e) {
+    var body = $("html, body");
+    body.stop().animate({ scrollTop: 0 }, 500, "swing");
+  });
+});
+</script>
+
+</body>
+   </body>
+</html>
